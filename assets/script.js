@@ -32,6 +32,7 @@ console.log(slidesLength);
 function dotsGenerate() {
     // dots.innerHTML = "";
     for (let i = 0; i < slidesLength; i++) {
+        // Variable locale
         const divDot = document.createElement("div");
         divDot.classList.add("dot");
         dots.appendChild(divDot);
@@ -64,7 +65,7 @@ function updateSlide() {
     // Mettre à jour le texte de l'image affichée
     textElement.innerHTML = slides[selectedDot].tagLine;
 
-    // Mettre à jour les points indicateurs (dot-solid)
+    // Mettre à jour les points indicateurs (dot + dot-solid)
     const dots = document.querySelectorAll(".dot");
     dots.forEach((dot, index) => {
         if (index === selectedDot) {
@@ -79,7 +80,7 @@ function updateSlide() {
 // dotsGenerate();
 
 arrowRight.addEventListener("click", (e) => {
-    // Changement droit du dot sélectionné
+    // Changement droit du dot sélectionné (point indicateur)
     selectedDot = (selectedDot + 1) % slidesLength;
     // console.log(e);
     updateSlide();
@@ -88,7 +89,7 @@ arrowRight.addEventListener("click", (e) => {
 //  updateSlide();
 
 arrowLeft.addEventListener("click", (e) => {
-    // Changement gauche du dot sélectionné
+    // Changement gauche du dot sélectionné (point indicateur)
     selectedDot = (selectedDot - 1 + slidesLength) % slidesLength;
     // console.log(e);
     updateSlide();
