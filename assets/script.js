@@ -27,7 +27,6 @@ const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
 // Nb d'éléments dans le tableau
 const slidesLength = slides.length;
-console.log(slidesLength);
 
 function dotsGenerate() {
     // dots.innerHTML = "";
@@ -43,16 +42,6 @@ function dotsGenerate() {
 }
 
 dotsGenerate();
-
-arrowRight.addEventListener("click", (e) => {
-    console.log(e);
-    // dotsGenerate();
-});
-
-arrowLeft.addEventListener("click", (e) => {
-    console.log(e);
-    // dotsGenerate();
-});
 
 function updateSlide() {
     // Changer l'image
@@ -82,17 +71,12 @@ function updateSlide() {
 arrowRight.addEventListener("click", (e) => {
     // Changement droit du dot sélectionné (point indicateur)
     selectedDot = (selectedDot + 1) % slidesLength;
-    // console.log(e);
     updateSlide();
 });
-
-//  updateSlide();
 
 arrowLeft.addEventListener("click", (e) => {
     // Changement gauche du dot sélectionné (point indicateur)
     selectedDot = (selectedDot - 1 + slidesLength) % slidesLength;
-    // console.log(e);
     updateSlide();
 });
 
-//  updateSlide();
